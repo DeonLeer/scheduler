@@ -2,7 +2,7 @@ import React from "react";
 
 import "components/InterviewerList.scss"
 
-import classnames from "classnames";
+
 
 import InterviewerListItem from "./InterviewerListItem"
 
