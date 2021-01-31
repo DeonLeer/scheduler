@@ -35,18 +35,24 @@ export default function Application(props) {
 
 
   useEffect(() => {
-    const urls = [`http://localhost:8001/api/days`, `http://localhost:8001/api/appointments`, `http://localhost:8001/api/interviewers`]
+    const url0 = axios.get(`http://localhost:8001/api/days`)
+    const url1 = axios.get(`http://localhost:8001/api/appointments`)
+    const url2 = axios.get(`http://localhost:8001/api/interviewers`)
 
     Promise.all([
-      axios.get(urls[0]),
-      axios.get(urls[1]),
-      axios.get(urls[2])
+      Promise.resolve(url0),
+      Promise.resolve(url1),
+      Promise.resolve(url2)
     ])
     .then((all) => {
-      setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }))
+      setState({
+        ...state,
+        days: all[0].data,
+        appointments: all[1].data,
+        interviewers: all[2].data
+      })
     })
-      
-  })
+  }, []);
 
 
   return (
