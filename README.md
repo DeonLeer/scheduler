@@ -1,8 +1,6 @@
 # Interview Scheduler
 
-## Setup
-
-Install dependencies with `npm install`.
+Interview scheduler is a singple page application built with React. It uses an API server with a PSQL database. It uses jest and cypress testing
 
 ## Running Webpack Development Server
 
