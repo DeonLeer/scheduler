@@ -61,7 +61,7 @@ export default function Appointments(props) {
           onEdit={() => transition(EDIT)}
         />
       )}
-      {mode == CONFIRM && (
+      {mode === CONFIRM && (
         <Confirm 
           message={CONFIRM}
           onCancel={() => back()}
